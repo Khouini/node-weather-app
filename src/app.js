@@ -35,7 +35,7 @@ app.get('/about', (req, res) => {
 
 app.get('/help', (req, res) => {
   res.render('help', {
-    helpText: 'These is some helpful text',
+    helpText: 'This website uses data from mapbox.com and weatherstach.com',
     title: 'Help',
     name: 'Khouini Yacine',
   });
