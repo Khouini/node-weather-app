@@ -7,6 +7,7 @@ const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
 const geocode = require('./utils/geocode.js');
 const forecast = require('./utils/forecast.js');
+const port = process.env.PORT || 3000;
 ////////////////////////////////////////////////////////:
 //! Static html (html files in public)
 //* getting accessed by /index.html
@@ -82,6 +83,6 @@ app.get('*', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('We are listening on port 3000');
+app.listen(port, () => {
+  console.log('We are listening on port', port);
 });

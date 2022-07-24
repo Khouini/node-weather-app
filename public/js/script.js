@@ -5,7 +5,7 @@ const msg2 = document.getElementById('msg2');
 weatherForm.addEventListener('submit', function (e) {
   msg1.textContent = 'Loading...';
   e.preventDefault();
-  fetch(`http://localhost:3000/weather?search=${inputValue.value}`)
+  fetch(`/weather?search=${inputValue.value}`)
     .then(response => response.json())
     .then(data => {
       if (data.error) {
