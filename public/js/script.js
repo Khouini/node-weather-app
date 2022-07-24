@@ -4,6 +4,7 @@ const msg1 = document.getElementById('msg1');
 const msg2 = document.getElementById('msg2');
 weatherForm.addEventListener('submit', function (e) {
   msg1.textContent = 'Loading...';
+  msg2.textContent = '';
   e.preventDefault();
   fetch(`/weather?search=${inputValue.value}`)
     .then(response => response.json())
