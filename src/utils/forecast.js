@@ -5,10 +5,10 @@ function forecast(long, lat, callback) {
     try {
       if (error) throw new Error('Unable to connect with weatherstack server');
       if (body.error) throw new Error('Unable to find location. Try another search.');
-      const { weather_descriptions, temperature, precip } = body.current;
+      const { weather_descriptions, temperature, precip, wind_speed } = body.current;
       callback(
         undefined,
-        `${weather_descriptions[0]}, it is currently ${temperature} degrees out. There is a ${precip}% chance of rain`
+        `${weather_descriptions[0]}, it is currently ${temperature} degrees out. There is a ${precip}% chance of rain. with wind speed of ${wind_speed} km/h`
       );
     } catch (error) {
       callback(error, undefined);
